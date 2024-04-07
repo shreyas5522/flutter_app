@@ -16,18 +16,27 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
+            backgroundColor: Colors.deepPurple,
             title: const Text(
-              "Hello World",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "This Title",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
-            backgroundColor: Colors.amberAccent,
+            centerTitle: true,
+            leading: const Icon(
+              Icons.menu,
+              weight: 700,
+              color: Colors.white,
+            ),
           ),
           body: Center(
             child: Container(
               height: 300,
               width: 300,
               decoration: BoxDecoration(
-                  color: Colors.purpleAccent,
+                  color: Colors.deepPurple,
                   borderRadius: BorderRadius.circular(30)),
               padding: const EdgeInsets.all(30),
               child: const Text(
