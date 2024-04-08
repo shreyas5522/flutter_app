@@ -1,0 +1,26 @@
+        body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) => ListTile(
+            title: Text(index.toString()),
+          ),
+        ),
+
+    ================================================
+              body: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              Container(
+                height: 300,
+                color: Colors.redAccent,
+              ),
+              Container(
+                height: 300,
+                color: Colors.amber,
+              ),
+              Container(
+                height: 300,
+                color: Colors.pink,
+              )
+            ],
+          ),
+        ),
