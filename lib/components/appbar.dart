@@ -7,7 +7,7 @@ AppBar buildMyAppBar() {
       Icons.timelapse,
       size: 25,
     ),
-    title: const Text("My Bookings",
+    title: const Text("Testing App",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 25,
