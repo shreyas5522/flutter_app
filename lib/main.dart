@@ -9,36 +9,89 @@ List<String> listt = ['All', 'Active', 'Completed', 'Cancelled'];
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key});
-  void userClicked() {
-    print("User Clicked");
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            appBar: buildMyAppBar(),
-            body: Center(
-                child: GestureDetector(
-              onTap: userClicked,
-              child: Container(
-                height: 200,
-                width: 200,
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: buildMyAppBar(),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            const BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                size: 30,
+                color: Colors.green,
+              ),
+              label: '', // Set label to an empty string to hide it
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: EdgeInsetsGeometry
+                    .infinity, // Remove padding for full space
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xFFA405B9),
+                  color: Colors.greenAccent,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                child: const Center(
-                  child: Text(
-                    "Click Here",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                        color: Colors.white),
+                // Set the background color here
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.history,
+                      size: 28,
+                      color: Colors.green,
+                    ),
+                    Text(
+                      'Ride History',
+                      style: TextStyle(fontSize: 16, color: Colors.green),
+                    ),
+                  ],
+                ),
+              ),
+              label: '', // Set label to empty string (optional)
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                size: 30,
+                color: Colors.green,
+              ),
+              label: '', // Set label to an empty string to hide it
+            ),
+          ],
+        ),
+        body: Column(
+          children: [
+            SizedBox(height: 8), // Add some space between AppBar and the list
+            Center(
+              child: Container(
+                padding: EdgeInsets.all(8),
+                height:
+                    50, // Set the height of the container according to your needs
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: listt.length,
+                  itemBuilder: (context, index) => Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Add your action here
+                      },
+                      child: Text(listt[index]),
+                    ),
                   ),
                 ),
               ),
-            ))));
+            ),
+            Column(
+              // You can use Row or Column depending on your layout needs
+              children: [Row()],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
