@@ -18,24 +18,23 @@ class MyApp extends StatelessWidget {
         appBar: buildMyAppBar(),
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
                 size: 30,
                 color: Colors.green,
               ),
-              label: '', // Set label to an empty string to hide it
+              label: '', // Hide label
             ),
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsetsGeometry
-                    .infinity, // Remove padding for full space
+                padding:
+                    EdgeInsets.zero, // Remove padding explicitly (optional)
                 decoration: BoxDecoration(
                   color: Colors.greenAccent,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                // Set the background color here
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
@@ -50,15 +49,15 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              label: '', // Set label to empty string (optional)
+              label: '', // Hide label (optional)
             ),
-            const BottomNavigationBarItem(
+            BottomNavigationBarItem(
               icon: Icon(
                 Icons.person,
                 size: 30,
                 color: Colors.green,
               ),
-              label: '', // Set label to an empty string to hide it
+              label: '', // Hide label
             ),
           ],
         ),
@@ -84,10 +83,6 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            Column(
-              // You can use Row or Column depending on your layout needs
-              children: [Row()],
             ),
           ],
         ),
