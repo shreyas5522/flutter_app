@@ -75,9 +75,7 @@ class MyApp extends StatelessWidget {
                   itemBuilder: (context, index) => Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: ElevatedButton(
-                      onPressed: () {
-                        // Add your action here
-                      },
+                      onPressed: () {},
                       child: Text(listt[index]),
                     ),
                   ),
